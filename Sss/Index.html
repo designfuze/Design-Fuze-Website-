@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Design Fuze | Digital Creative Agency</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root{
+  --primary:#00FFD5;
+  --bg-dark:#020617;
+  --bg-light:#f8fafc;
+  --text-dark:#ffffff;
+  --text-light:#111;
+  --glass:rgba(255,255,255,.08);
+}
+
+body{
+  margin:0;
+  font-family:Poppins,sans-serif;
+  background:var(--bg-dark);
+  color:var(--text-dark);
+  transition:.4s;
+}
+.light{
+  background:var(--bg-light);
+  color:var(--text-light);
+}
+
+/* LOADER */
+#loader{
+  position:fixed;
+  inset:0;
+  background:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+.spinner{
+  width:60px;
+  height:60px;
+  border:5px solid #333;
+  border-top:5px solid var(--primary);
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px;
+}
+nav a{
+  color:inherit;
+  margin-left:18px;
+  text-decoration:none;
+}
+.toggle{
+  cursor:pointer;
+  padding:8px 14px;
+  border-radius:20px;
+  background:var(--glass);
+}
+
+/* HERO */
+.hero{
+  min-height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+.hero h1{
+  font-size:38px;
+}
+.hero span{color:var(--primary)}
+.hero p{
+  max-width:700px;
+  opacity:.9;
+}
+.hero a{
+  margin-top:25px;
+  padding:14px 34px;
+  background:var(--primary);
+  color:#000;
+  border-radius:30px;
+  font-weight:600;
+  text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  opacity:.7;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  font-size:26px;
+  padding:14px 16px;
+  border-radius:50%;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Loader -->
+<div id="loader"><div class="spinner"></div></div>
+
+<nav>
+  <strong>Design <span style="color:#00FFD5">Fuze</span></strong>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <span class="toggle" onclick="toggleTheme()">🌙 / ☀</span>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Where Your Ideas <span>Ignite</span></h1>
+  <p>
+    A creative digital agency with 4+ years experience, 100+ projects,
+    and 20+ happy clients.
+  </p>
+  <a href="contact.html">Get Free Consultation</a>
+</section>
+
+<footer>
+  © Design Fuze | +91 8084945254 | designfuzee@gmail.com
+</footer>
+
+<a class="whatsapp"
+href="https://wa.me/918084945254" target="_blank">💬</a>
+
+<script>
+window.onload=()=>loader.style.display="none";
+function toggleTheme(){
+  document.body.classList.toggle("light");
+}
+</script>
+
+</body>
+</html>
